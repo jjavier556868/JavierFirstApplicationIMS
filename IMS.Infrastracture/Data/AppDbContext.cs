@@ -1,6 +1,7 @@
 ﻿using IMS.Domain.Models;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Diagnostics;
 using System.Collections.Specialized;
 
 namespace IMS.Infrastracture.Data
@@ -17,6 +18,7 @@ namespace IMS.Infrastracture.Data
             optionsBuilder.UseSqlServer("Data Source=(localdb)\\MSSQLLocalDB;" +
                 "Initial Catalog=AppDb;Integrated Security=True; " +
                 "TrustServerCertificate=True;");
+            optionsBuilder.ConfigureWarnings(w => w.Ignore(RelationalEventId.PendingModelChangesWarning));
         }
     }
 }
