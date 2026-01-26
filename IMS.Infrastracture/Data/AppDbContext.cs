@@ -19,10 +19,9 @@ namespace IMS.Infrastracture.Data
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Data Source=(localdb)\\MSSQLLocalDB;" +
-                "Initial Catalog=AppDb;Integrated Security=True; " +
-                "TrustServerCertificate=True;");
-            optionsBuilder.ConfigureWarnings(w => w.Ignore(RelationalEventId.PendingModelChangesWarning));
+            optionsBuilder.UseSqlServer("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=AppDb;Integrated Security=True;TrustServerCertificate=True;");
         }
+
+        public DbSet<Profile> Profiles { get; set; }
     }
 }
