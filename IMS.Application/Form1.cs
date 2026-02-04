@@ -7,13 +7,17 @@ namespace IMS.Application
 
         private AppDbContext _context = new AppDbContext();
         public Form1() { 
-
             InitializeComponent();
             LoadPrograms();
         }
 
-        private void LoadPrograms() {
-           dataGridView1.DataSource = _context.Programs.ToList();
+        //CRUD - Read Operation (Listing Programs)
+        private void LoadPrograms()
+        {
+            using (var _context = new AppDbContext())
+            {
+                dataGridView1.DataSource = _context.Programs.ToList();
+            }
         }
     }
 }
