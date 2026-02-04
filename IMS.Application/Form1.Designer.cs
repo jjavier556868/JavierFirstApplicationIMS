@@ -38,6 +38,7 @@
             txtBoxName = new TextBox();
             txtBoxDescription = new TextBox();
             btnSave = new Button();
+            btnDelete = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -91,6 +92,7 @@
             txtBoxSearch.Name = "txtBoxSearch";
             txtBoxSearch.Size = new Size(310, 23);
             txtBoxSearch.TabIndex = 5;
+            txtBoxSearch.TextChanged += txtBoxSearch_TextChanged;
             // 
             // txtBoxID
             // 
@@ -105,6 +107,7 @@
             txtBoxName.Name = "txtBoxName";
             txtBoxName.Size = new Size(310, 23);
             txtBoxName.TabIndex = 7;
+            txtBoxName.KeyDown += txtBoxName_KeyDown;
             // 
             // txtBoxDescription
             // 
@@ -112,21 +115,34 @@
             txtBoxDescription.Name = "txtBoxDescription";
             txtBoxDescription.Size = new Size(310, 23);
             txtBoxDescription.TabIndex = 8;
+            txtBoxDescription.KeyDown += txtBoxDescription_KeyDown;
             // 
             // btnSave
             // 
-            btnSave.Location = new Point(24, 377);
+            btnSave.Location = new Point(23, 352);
             btnSave.Name = "btnSave";
             btnSave.Size = new Size(310, 33);
             btnSave.TabIndex = 9;
             btnSave.Text = "Save";
             btnSave.UseVisualStyleBackColor = true;
+            btnSave.Click += btnSave_Click;
+            // 
+            // btnDelete
+            // 
+            btnDelete.Location = new Point(23, 391);
+            btnDelete.Name = "btnDelete";
+            btnDelete.Size = new Size(310, 33);
+            btnDelete.TabIndex = 10;
+            btnDelete.Text = "Delete";
+            btnDelete.UseVisualStyleBackColor = true;
+            btnDelete.Click += btnDelete_Click;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(btnDelete);
             Controls.Add(btnSave);
             Controls.Add(txtBoxDescription);
             Controls.Add(txtBoxName);
@@ -156,5 +172,6 @@
         private TextBox txtBoxName;
         private TextBox txtBoxDescription;
         private Button btnSave;
+        private Button btnDelete;
     }
 }
